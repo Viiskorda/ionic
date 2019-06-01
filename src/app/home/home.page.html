@@ -3,6 +3,9 @@
     <ion-title>
       {{ viewTitle }}
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="today()">Today</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +15,7 @@
       <ion-card-header tappable (click)="collapseCard = !collapseCard">
         <ion-card-title>New Event</ion-card-title>
       </ion-card-header>
-      <ion-card-content *ngIf="!collapseCard">
+      <ion-card-content *ngIf="collapseCard">
    
         <ion-item>
           <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
@@ -81,7 +84,7 @@
     startHour="6"
     endHour="20"
     step="30"
-    startingDayWeek="1"
+    startingDayMonth="1"
   >
   </calendar>
 </ion-content>
